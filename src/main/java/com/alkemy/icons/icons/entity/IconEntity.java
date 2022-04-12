@@ -23,21 +23,17 @@ public class IconEntity {
 	private String imagen;
 	private String denominacion;
 	
-	@Column(name = "fecha_creacion")
+	@Column(name = "Edad")
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
-	private LocalDate fechaCreacion;
+	private LocalDate fechaNacimiento;
+	//aca no sé si hay q hacer el calculo o poner un numero fijo como edad 
 	
 	private Long altura;
 	
 	private String historia;
 	
-	//private boolean deleted = Boolean.FALSE;
 	
-	//@ManytoOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	//@JoinColumn(name = "pais_id")
-	// private PaisEntity pais;
-	
-	@ManyToMany(mappedBy = "icons", cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy = "icons")
 	private List<PaisEntity> paises = new ArrayList<>();
 	
 
